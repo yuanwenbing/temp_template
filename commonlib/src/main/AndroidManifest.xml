@@ -1,2 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.bitauto.android.commonlib" />
+    package="com.bitauto.android.commonlib">
+
+    <application>
+        <activity android:name="com.bitauto.common.lib.MainActivity" />
+        <activity android:name="com.bitauto.common.lib.SplashActivity" />
+    </application>
+
+</manifest>

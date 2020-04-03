@@ -1,0 +1,26 @@
+ext {
+
+    android = [
+            compileSdkVersion: 28,
+            buildToolsVersion: "28.0.3",
+            minSdkVersion    : 19,
+            targetSdkVersion : 28
+    ]
+
+    dependVersion = [
+    ]
+
+    supportLib = [
+            // --------  support  -------
+            constraintlayout: 'com.android.support.constraint:constraint-layout:1.1.3',
+            desigin         : 'com.android.support:design:28.0.0',
+            appcompatsv7    : 'com.android.support:appcompat-v7:28.0.0'
+    ]
+
+    thirdLib = [
+    ]
+
+    supportLibs = supportLib.values()
+
+
+}

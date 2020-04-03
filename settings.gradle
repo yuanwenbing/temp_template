@@ -1,3 +1,4 @@
 rootProject.name='temp_template'
 include ':app'
-include ':commonlib'
+include ':template-splash-ad'
+include ':template-main-tab'

@@ -1,0 +1,17 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.android.template.tab">
+
+    <application>
+        <activity
+            android:name=".MainTabActivity"
+            android:label="默认主页">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.TEMPLATE" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
+
+

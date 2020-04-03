@@ -1,5 +1,4 @@
-package com.android.template.temp_template;
-
+package com.functionframework.demo;
 
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -14,6 +13,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
+import com.android.template.temp_template.R;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -54,10 +55,13 @@ public class MainActivity extends AppCompatActivity {
             CharSequence labelSeq = info.loadLabel(pm);
             String label = labelSeq != null ? labelSeq.toString() : info.activityInfo.name;
 
-            Map<String, Object> temp = new HashMap<>();
-            temp.put("title", label);
-            temp.put("intent", createActivityIntent(info.activityInfo.applicationInfo.packageName, info.activityInfo.name));
-            intentList.add(temp);
+            String packageName = info.activityInfo.applicationInfo.packageName;
+            if(packageName.equals(getPackageName())) {
+                Map<String, Object> temp = new HashMap<>();
+                temp.put("title", label);
+                temp.put("intent", createActivityIntent(packageName, info.activityInfo.name));
+                intentList.add(temp);
+            }
         }
 
         return intentList;
@@ -94,7 +98,7 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         public void onBindViewHolder(@NonNull VH vh, int position) {
-            Map<String, Object> dataMap = mDataList.get(position);
+            final Map<String, Object> dataMap = mDataList.get(position);
             vh.titleView.setText((CharSequence) dataMap.get("title"));
 
             if (mClickListener != null) {
